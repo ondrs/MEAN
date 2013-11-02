@@ -1,0 +1,40 @@
+<section data-ng-controller="IndexController">
+
+    <ul class="media-list" ng-repeat="car in cars">
+        <li class="media well well-small">
+            <div class="media-body">
+                <h4 class="media-heading" style="padding: 5px;">{{ car.brand }} {{ car.model }} {{ car.version }}</h4>
+                <table class="table table-condensed">
+                    <tr>
+                        <th>Cena</th>
+                        <td>{{ car.price | number }} &euro;</td>
+                        <td><i ng-show="car.claimableVat">odpočet DPH</i></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Převodovka</th>
+                        <td>{{ car.gearbox }}</td>
+                        <th>Palivo</th>
+                        <td>{{ car.fuel }}</td>
+                    </tr>
+                    <tr>
+                        <th>Najeto</th>
+                        <td>{{ car.km | number }} km</td>
+                        <th>Výkon</th>
+                        <td>{{ car.kw | number }} kW</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <select ng-change="changeMark(car, mark)" ng-model="mark" ng-options="mark for mark in marks">
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </li>
+    </ul>
+
+</section>
