@@ -24,9 +24,9 @@
                         <td>{{ car.kw | number }} kW</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th>Rok</th>
+                        <td>{{ car.date | date:'yyyy' }}</td>
+                        <th></th>
                         <td>
                             <select ng-change="changeMark(car, mark)" ng-model="mark" ng-options="mark for mark in marks">
                             </select>
