@@ -7,7 +7,7 @@
                 <table class="table table-condensed">
                     <tr>
                         <th>Cena</th>
-                        <td>{{ car.price | number }} &euro;</td>
+                        <td>{{ car.price * 27 | number }} CZK</td>
                         <td><i ng-show="car.claimableVat">odpočet DPH</i></td>
                         <td></td>
                     </tr>
