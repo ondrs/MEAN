@@ -1,6 +1,6 @@
 <section data-ng-controller="IndexController">
 
-    <ul class="media-list" ng-repeat="car in cars">
+    <ul class="media-list" ng-repeat="car in cars | orderBy: brand">
         <li class="media well well-small">
             <div class="media-body">
                 <h4 class="media-heading" style="padding: 5px;">{{ car.brand }} {{ car.model }} {{ car.version }}</h4>
