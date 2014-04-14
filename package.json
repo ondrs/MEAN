@@ -18,13 +18,13 @@
         "postinstall": "bower install"
     },
     "dependencies": {
-        "express": "latest",
-        "jade": "latest",
-        "mongoose": "latest",
+        "express": "3.4.8",
+        "jade": "0.35.0",
+        "mongoose": "3.6.12",
         "connect-mongo": "latest",
         "underscore": "latest",
         "async": "latest",
-        "view-helpers": "latest",
+        "view-helpers": "0.1.4 ",
         "forever": "latest",
         "bower": "latest",
         "grunt": "latest",
