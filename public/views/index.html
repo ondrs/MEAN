@@ -1,34 +1,34 @@
 <section data-ng-controller="IndexController">
 
-    <ul class="media-list" ng-repeat="car in cars | orderBy: 'brand'">
+    <ul class="media-list" ng-repeat="vehicle in vehicles | orderBy: 'brand'">
         <li class="media well well-small">
             <div class="media-body">
-                <h4 class="media-heading" style="padding: 5px;">{{ car.brand }} {{ car.model }} {{ car.version }}</h4>
+                <h4 class="media-heading" style="padding: 5px;">{{ vehicle.brand.name }} {{ vehicle.model.name }} {{ vehicle.version }}</h4>
                 <table class="table table-condensed">
                     <tr>
                         <th>Cena</th>
-                        <td>{{ car.price * 27 | number }} CZK</td>
-                        <td><i ng-show="car.claimableVat">odpočet DPH</i></td>
-                        <td></td>
+                        <td>{{ vehicle.price | number }} CZK</td>
+                        <th>Najeto</th>
+                        <td>{{ vehicle.km | number }} km</td>
                     </tr>
                     <tr>
                         <th>Převodovka</th>
-                        <td>{{ car.gearbox }}</td>
+                        <td>{{ vehicle.gearbox }}</td>
                         <th>Palivo</th>
-                        <td>{{ car.fuel }}</td>
+                        <td>{{ vehicle.fuel }}</td>
                     </tr>
                     <tr>
-                        <th>Najeto</th>
-                        <td>{{ car.km | number }} km</td>
                         <th>Výkon</th>
-                        <td>{{ car.kw | number }} kW</td>
+                        <td>{{ vehicle.kw | number }} kW</td>
+                        <th>Objem</th>
+                        <td>{{ vehicle.ccm | number }} ccm</td>
                     </tr>
                     <tr>
                         <th>Rok</th>
-                        <td>{{ car.date | date:'yyyy' }}</td>
+                        <td>{{ vehicle.date_made_year }}</td>
                         <th></th>
                         <td>
-                            <select ng-change="changeMark(car, mark)" ng-model="mark" ng-options="mark for mark in marks">
+                            <select ng-change="changeMark(vehicle, mark)" ng-model="mark" ng-options="k as v for (k,v) in marks">
                             </select>
                         </td>
                     </tr>

@@ -2,9 +2,9 @@
 module.exports = function(app) {
 
 
-  var cars = require('../app/controllers/cars');
-  app.get('/cars', cars.all);
-  app.put('/cars/:carId', cars.update);
+  var vehicles = require('../app/controllers/vehicles');
+  app.get('/vehicles', vehicles.all);
+  app.put('/vehicles/:vehicleId', vehicles.update);
 
 
 

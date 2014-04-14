@@ -2,19 +2,19 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-    Car = mongoose.model('Car'),
+    Vehicle = mongoose.model('Vehicle'),
     _ = require('underscore')
 ;
 
 
 /**
- * Update a car
+ * Update a vehicle
  */
 exports.update = function(req, res) {
 
-  var car = req.body;
+  var vehicle = req.body;
 
-  Car.update({_id: car._id}, { $push: { marks: car.marks } }, function(err, result) {
+  Vehicle.update({_id: vehicle._id}, { $push: { marks: vehicle.marks } }, function(err, result) {
 
     res.jsonp({success: result});
 
@@ -24,16 +24,16 @@ exports.update = function(req, res) {
 
 
 /**
- * List of Cars
+ * List of Vehicles
  */
 exports.all = function(req, res) {
-    Car.find().exec(function(err, cars) {
+    Vehicle.find().exec(function(err, vehicles) {
         if (err) {
             res.render('error', {
                 status: 500
             });
         } else {
-            res.jsonp(cars);
+            res.jsonp(vehicles);
         }
     });
 };

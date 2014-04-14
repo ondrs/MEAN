@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
 
 
 
-var CarSchema = new Schema({}, { strict: false });
+var VehicleSchema = new Schema({}, { strict: false });
 
 
-mongoose.model('Car', CarSchema);
+mongoose.model('Vehicle', VehicleSchema);
