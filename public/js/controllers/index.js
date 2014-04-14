@@ -45,9 +45,9 @@ angular.module('mean.system').controller('IndexController', function ($scope, $h
 
 
   $scope.marks = {
-    0: '-',
-    0.5: '...',
-    1: '+'
+    0: '✘',
+    0.5: '☐',
+    1: '✔'
   };
 
 
