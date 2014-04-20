@@ -11,9 +11,17 @@ Execute mongo and select db monitoring
 
     mongo monitoring
 
-Select and copy random 300 vehicles (Alfa, Audi, BMW, Skoda)
+Select and copy random 300 vehicles
+ - brands: Alfa, Audi, BMW, Skoda
+ - made year >= 2012
+ - price >= 500000
 
-    var filter = { "brand._id": {$in: [1, 2, 5, 93]} };
+    var filter = {
+        "brand._id": { $in: [1, 2, 5, 93] },
+        "date_made_year": { $gte: 2012 },
+        "price: { $gte: 500000 }
+    };
+
     var count = db.vehicles.count(filter);
 
     for(var i = 0; i < 300; ++i) {
