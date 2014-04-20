@@ -12,9 +12,12 @@ Execute mongo and select db monitoring
     mongo monitoring
 
 Select and copy random 300 vehicles
- - brands: Alfa, Audi, BMW, Skoda
- - made year >= 2012
- - price >= 500000
+
+- brands: Alfa, Audi, BMW, Skoda
+- made year >= 2012
+- price >= 500000
+
+```javascript
 
     var filter = {
         "brand._id": { $in: [1, 2, 5, 93] },
@@ -27,4 +30,4 @@ Select and copy random 300 vehicles
     for(var i = 0; i < 300; ++i) {
       var vehicle = db.vehicles.find(filter).limit(-1).skip( _rand() * count).next()
       db.getSiblingDB('mean').vehicles.insert(vehicle); }
-
+```
