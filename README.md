@@ -24,7 +24,7 @@ Select and copy random 300 vehicles
 var filter = {
     "brand._id": { $in: [1, 2, 5, 93] },
     "date_made_year": { $gte: 2012 },
-    "price: { $gte: 500000 }
+    "price": { $gte: 500000 }
 };
 
 var count = db.vehicles.count(filter);
