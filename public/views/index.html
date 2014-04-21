@@ -1,13 +1,13 @@
 <section data-ng-controller="IndexController">
 
-    <ul class="media-list" ng-repeat="vehicle in vehicles | orderBy: 'brand'">
+    <ul class="media-list" ng-repeat="vehicle in vehicles | orderBy: 'model._id'">
         <li class="media well well-small">
             <div class="media-body">
                 <h4 class="media-heading" style="padding: 5px;">{{ vehicle.brand.name }} {{ vehicle.model.name }} {{ vehicle.version }}</h4>
                 <table class="table table-condensed">
                     <tr>
                         <th>Cena</th>
-                        <td>{{ vehicle.price | number }} CZK</td>
+                        <td>{{ vehicle.price / 27.5 | number }} EUR</td>
                         <th>Najeto</th>
                         <td>{{ vehicle.km | number }} km</td>
                     </tr>
